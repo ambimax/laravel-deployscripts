@@ -31,8 +31,13 @@ function usage_exit {
 }
 
 function artisan {
-    echo "$PHP_COMMAND ${RELEASEFOLDER}/artisan $1" 1>&2
-    $PHP_COMMAND "${RELEASEFOLDER}/artisan $1"
+    echo "(cd ${RELEASEFOLDER} && $PHP_COMMAND artisan $1)" 1>&2
+    (cd ${RELEASEFOLDER} && $PHP_COMMAND artisan "$1")
+}
+
+function run {
+    echo "$1" 1>&2
+    $1 || error_exit "An error occured"
 }
 
 while getopts 'e:r:s' OPTION ; do
