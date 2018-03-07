@@ -31,7 +31,7 @@ function usage_exit {
 }
 
 function artisan {
-    echo "(cd ${RELEASEFOLDER} && $PHP_COMMAND artisan $1)" 1>&2
+    echo "(cd ${RELEASEFOLDER} && $PHP_COMMAND artisan $1)"
     (cd ${RELEASEFOLDER} && $PHP_COMMAND artisan "$1")
 }
 
@@ -57,7 +57,7 @@ if [ ! -f "${RELEASEFOLDER}/.env.${ENVIRONMENT}" ]; then error_exit "ERROR: No .
 echo
 echo "Set .env file"
 echo "-----------------------------"
-cp -f "${RELEASEFOLDER}/.env.${ENVIRONMENT}" "${RELEASEFOLDER}/.env"
+run cp -f "${RELEASEFOLDER}/.env.${ENVIRONMENT}" "${RELEASEFOLDER}/.env"
 
 echo
 echo "Linking to shared directories"
@@ -87,7 +87,7 @@ ln -s "${SHAREDFOLDER}/storage/app/public" "${RELEASEFOLDER}/public/storage"  ||
 echo
 echo "Migrate Laravel"
 echo "--------------"
-artisan "migrate --force" || error_exit "Migration failed"
+artisan "migrate --force"
 
 echo
 echo "Cache and Optimize Laravel"
