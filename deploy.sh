@@ -169,7 +169,7 @@ fi
 ########################################################################################################################
 
 if [ ! -f "${RELEASEFOLDER}/tools/install.sh" ] ; then error_exit "Could not find installer"; fi
-${RELEASEFOLDER}/tools/install.sh -e "${ENVIRONMENT}" -r "${RELEASEFOLDER}" || error_exit "Installing package failed"
+${RELEASEFOLDER}/vendor/bin/install.sh -e "${ENVIRONMENT}" -r "${RELEASEFOLDER}" || error_exit "Installing package failed"
 
 
 
