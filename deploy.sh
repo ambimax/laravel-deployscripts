@@ -168,7 +168,7 @@ fi
 # Step 3: Trigger installation
 ########################################################################################################################
 
-if [ ! -f "${RELEASEFOLDER}/tools/install.sh" ] ; then error_exit "Could not find installer"; fi
+if [ ! -f "${RELEASEFOLDER}/vendor/bin/install.sh" ] ; then error_exit "Could not find installer"; fi
 ${RELEASEFOLDER}/vendor/bin/install.sh -e "${ENVIRONMENT}" -r "${RELEASEFOLDER}" || error_exit "Installing package failed"
 
 
