@@ -1,0 +1,19 @@
+{
+  "name": "ambimax/laravel-deployscripts",
+  "description": "Collection of scripts for Laravel builds and deployments",
+  "minimum-stability": "dev",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Tobias Schifftner"
+    }
+  ],
+  "require": {
+    "greynoise-design/laravel-coding-standard": "^1.0"
+  },
+  "bin": [
+    "install.sh",
+    "phplint.sh",
+    "xmllint.sh"
+  ]
+}
