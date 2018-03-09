@@ -86,8 +86,8 @@ tmpfile=$(tempfile -p build_tar_base_files_)
 if [ ! -f "config/tar_excludes.txt" ] ; then
     touch config/tar_excludes.txt
     echo '.git*' >> config/tar_excludes.txt
-    echo 'composer.json' >> config/tar_excludes.txt
-    echo 'composer.lock' >> config/tar_excludes.txt
+#    echo 'composer.json' >> config/tar_excludes.txt
+#    echo 'composer.lock' >> config/tar_excludes.txt
 fi
 
 BASEPACKAGE="artifacts/${FILENAME}"
