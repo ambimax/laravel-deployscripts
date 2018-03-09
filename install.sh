@@ -31,8 +31,10 @@ function usage_exit {
 }
 
 function artisan {
-    echo "(cd ${RELEASEFOLDER} && $PHP_COMMAND artisan $1)"
-    (cd ${RELEASEFOLDER} && $PHP_COMMAND artisan "$1")
+    echo "${PHP_COMMAND} ${RELEASEFOLDER}/artisan $1"
+    ${PHP_COMMAND} ${RELEASEFOLDER}/artisan "$1"
+#    echo "(cd ${RELEASEFOLDER} && $PHP_COMMAND artisan $1)"
+#    (cd ${RELEASEFOLDER} && $PHP_COMMAND artisan "$1")
 }
 
 function run {
