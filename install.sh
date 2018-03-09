@@ -59,7 +59,7 @@ if [ ! -f "${RELEASEFOLDER}/.env.${ENVIRONMENT}" ]; then error_exit "ERROR: No .
 echo
 echo "Set .env file"
 echo "-----------------------------"
-run "cp -f \"${RELEASEFOLDER}/.env.${ENVIRONMENT}\" \"${RELEASEFOLDER}/.env\""
+cp -f "${RELEASEFOLDER}/.env.${ENVIRONMENT}" "${RELEASEFOLDER}/.env"
 
 echo
 echo "Linking to shared directories"
